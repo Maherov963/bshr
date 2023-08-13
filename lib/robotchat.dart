@@ -1,5 +1,5 @@
-import 'package:alkhalil/home.dart';
 import 'package:flutter/material.dart';
+import 'home.dart';
 
 class RobotChat extends StatefulWidget {
   const RobotChat({super.key});
@@ -12,8 +12,15 @@ class _RobotChatState extends State<RobotChat> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.system,
-      darkTheme: ThemeData.dark(useMaterial3: true),
+      darkTheme: ThemeData.from(
+        useMaterial3: true,
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.blue,
+          brightness: Brightness.dark,
+        ),
+      ),
       theme: ThemeData.light(useMaterial3: true),
       home: const HomeBshr(),
     );

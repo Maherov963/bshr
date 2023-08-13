@@ -1,6 +1,10 @@
+import 'package:alkhalil/comment/post_card.dart';
 import 'package:alkhalil/search_page.dart';
 import 'package:flutter/material.dart';
+import 'account/my_profile.dart';
+import 'chat/chat_home.dart';
 import 'friend_page.dart';
+import 'group/my_groups.dart';
 import 'notifications_page.dart';
 
 class HomeBshr extends StatefulWidget {
@@ -12,7 +16,7 @@ class HomeBshr extends StatefulWidget {
 
 class _HomeBshrState extends State<HomeBshr> with TickerProviderStateMixin {
   late final TabController _tabController =
-      TabController(length: 6, vsync: this);
+      TabController(length: 5, vsync: this);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,9 +46,6 @@ class _HomeBshrState extends State<HomeBshr> with TickerProviderStateMixin {
               icon: Icon(Icons.account_circle),
             ),
             Tab(
-              icon: Icon(Icons.group),
-            ),
-            Tab(
               icon: Icon(Icons.groups),
             ),
             Tab(
@@ -61,13 +62,35 @@ class _HomeBshrState extends State<HomeBshr> with TickerProviderStateMixin {
           Expanded(
             child: TabBarView(
               controller: _tabController,
-              children: const [
-                Column(),
-                Column(),
-                FriendPage(),
-                Column(),
-                Column(),
-                NotificationPage(),
+              children: [
+                SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      Card(
+                        child: ListTile(
+                          leading: const CircleAvatar(
+                            backgroundColor: Colors.blue,
+                          ),
+                          title: Text("Maherov"),
+                          subtitle: Text("what the fuck are you thinking for?"),
+                        ),
+                      ),
+                      ListView.separated(
+                        shrinkWrap: true,
+                        physics: const NeverScrollableScrollPhysics(),
+                        itemBuilder: (context, index) => PostCard(id: index),
+                        separatorBuilder: (context, index) => const SizedBox(
+                          height: 5,
+                        ),
+                        itemCount: 20,
+                      ),
+                    ],
+                  ),
+                ),
+                const MyProfile(),
+                const MyGroupPage(),
+                const ChatHome(),
+                const NotificationPage(),
               ],
             ),
           ),
