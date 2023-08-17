@@ -1,5 +1,9 @@
-import 'package:alkhalil/comment/post_card.dart';
+import 'package:alkhalil/app/components/post_card.dart';
+import 'package:alkhalil/app/pages/account/create_profile.dart';
+import 'package:alkhalil/app/router/router.dart';
 import 'package:flutter/material.dart';
+
+import '../../widgets/my_button.dart';
 
 class MyProfile extends StatefulWidget {
   const MyProfile({super.key});
@@ -19,18 +23,27 @@ class _MyProfileState extends State<MyProfile> {
               child: Column(
                 children: [
                   ListTile(
-                    title: const Text("Group name"),
+                    title: const Text("Maherov"),
                     leading: const CircleAvatar(
                       backgroundColor: Colors.blue,
                       radius: 50,
                     ),
-                    subtitle: ElevatedButton(
-                        onPressed: () {}, child: Text("Edit profile")),
+                    subtitle: MyButton(
+                      onPressed: () {
+                        MyRouter.myPush(
+                          context: context,
+                          child: const CreateProfilePage(),
+                        );
+                      },
+                      color: Colors.blue,
+                      fontColor: Colors.white,
+                      text: "Edit profile",
+                    ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
+                  const Padding(
+                    padding: EdgeInsets.all(8.0),
                     child: Text(
-                        "this is group description this is group description this is group description this is group description this is group description"),
+                        "this is profile bio this is profile bio this is profile bio  this is profile bio  this is profile bio "),
                   ),
                 ],
               ),

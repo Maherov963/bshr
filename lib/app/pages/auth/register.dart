@@ -1,8 +1,8 @@
-import 'package:alkhalil/my_text_form_field.dart';
-import 'package:alkhalil/router.dart';
+import 'package:alkhalil/app/widgets/my_text_form_field.dart';
+import 'package:alkhalil/app/router/router.dart';
 import 'package:flutter/material.dart';
 
-import '../home.dart';
+import '../home/home.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});

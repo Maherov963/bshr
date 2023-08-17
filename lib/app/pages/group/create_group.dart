@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-
-import '../my_text_form_field.dart';
-import '../router.dart';
+import '../../components/image_picker_mobile.dart';
+import '../../widgets/my_text_form_field.dart';
 
 class CreateGroupPage extends StatefulWidget {
   const CreateGroupPage({super.key});
@@ -12,8 +11,8 @@ class CreateGroupPage extends StatefulWidget {
 
 class _CreateGrouppageState extends State<CreateGroupPage> {
   final TextEditingController groupname = TextEditingController();
-  final TextEditingController biotitle = TextEditingController();
   final TextEditingController bio = TextEditingController();
+  final TextEditingController photo = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -26,17 +25,14 @@ class _CreateGrouppageState extends State<CreateGroupPage> {
           child: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.all(10),
-                child: MyTextFormField(
-                  hint: "groupname",
-                  controller: groupname,
-                ),
+                padding: const EdgeInsets.all(20),
+                child: ImagePickerMobile(imageController: photo, radius: 70),
               ),
               Padding(
                 padding: const EdgeInsets.all(10),
                 child: MyTextFormField(
-                  hint: "bio title",
-                  controller: biotitle,
+                  hint: "groupname",
+                  controller: groupname,
                 ),
               ),
               Padding(

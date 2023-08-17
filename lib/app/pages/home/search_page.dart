@@ -1,6 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'mybar.dart' as mybar;
-import 'notifications_page.dart';
+import '../notification/notifications_page.dart';
 
 class Searchpage extends StatefulWidget {
   const Searchpage({super.key});
@@ -19,14 +19,9 @@ class _SearchpageState extends State<Searchpage> with TickerProviderStateMixin {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: mybar.SearchAnchor.bar(
-                barHintText: "Search .....",
-                viewHintText: "Search .....",
-                isFullScreen: false,
-                barLeading: const BackButton(),
-                barTrailing: const [Icon(Icons.search)],
-                suggestionsBuilder: (context, controller) => [],
+              padding: const EdgeInsets.all(8.0),
+              child: CupertinoSearchTextField(
+                style: Theme.of(context).textTheme.bodyLarge,
               ),
             ),
             TabBar(

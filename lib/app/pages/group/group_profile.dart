@@ -1,10 +1,5 @@
-import 'dart:io';
-
-import 'package:alkhalil/comment/comment_page.dart';
-import 'package:alkhalil/comment/post_card.dart';
-import 'package:alkhalil/router.dart';
+import 'package:alkhalil/app/components/post_card.dart';
 import 'package:flutter/material.dart';
-import 'package:like_button/like_button.dart';
 
 class GroupProfile extends StatefulWidget {
   const GroupProfile({super.key});

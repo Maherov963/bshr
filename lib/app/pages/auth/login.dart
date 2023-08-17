@@ -1,9 +1,9 @@
-import 'package:alkhalil/auth/register.dart';
-import 'package:alkhalil/my_text_form_field.dart';
-import 'package:alkhalil/router.dart';
+import 'package:alkhalil/app/pages/auth/register.dart';
+import 'package:alkhalil/app/widgets/my_text_form_field.dart';
+import 'package:alkhalil/app/router/router.dart';
 import 'package:flutter/material.dart';
 
-import '../home.dart';
+import '../home/home.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});

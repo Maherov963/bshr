@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'animated_button.dart';
+import '../../components/animated_button.dart';
 
 class NotificationPage extends StatefulWidget {
   const NotificationPage({super.key});
@@ -191,11 +191,11 @@ class _NotificationPageState extends State<NotificationPage> {
 getButton({
   void Function()? onTap,
   required String text,
-  required Color color,
+  Color? color,
 }) {
   return InkWell(
-    overlayColor: MaterialStatePropertyAll(color.withOpacity(0.5)),
-    onTap: () {},
+    overlayColor: MaterialStatePropertyAll(color?.withOpacity(0.5)),
+    onTap: onTap,
     child: Padding(
       padding: const EdgeInsets.all(4.0),
       child: Text(
